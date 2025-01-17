@@ -1,0 +1,131 @@
+body {
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+	font-family: Arial, Helvetica, sans-serif;
+	background: #f0f0f0;
+	width: 100%;
+}
+
+main {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	justify-content: start;
+}
+
+.form-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 0 20px;
+	height: 100%;
+	background-color: rgb(10, 173, 94);
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 15px;
+	border: 2px solid #ddd;
+	border-radius: 10px;
+	background-color: white;
+}
+
+form input {
+	margin-top: 10px;
+	padding: 8px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+form button {
+	margin-top: 10px;
+	padding: 10px 20px;
+	border: none;
+	background-color: #007bff;
+	color: white;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.circle {
+	position: relative;
+	width: 80px;
+	height: 80px;
+	background-color: white;
+	border-radius: 50%;
+	border: 3px solid black;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+	z-index: 3; /* Aseguramos que esté siempre por encima */
+}
+
+.circle img {
+	width: 50px;
+	height: 50px;
+	object-fit: contain;
+	border-radius: 50%;
+}
+
+.card-pokemon {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 200px;
+	border-radius: 8px;
+	.content {
+		padding: 5px;
+		background-color: rgb(245, 206, 134);
+		display: flex;
+		width: 100%;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		border-radius: 0 0 8px 8px;
+		gap: 5px;
+		span {
+			font-size: 0.8rem;
+			font-weight: bold;
+			color: black;
+		}
+	}
+}
+
+.pokemon-img {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 8px 8px 0 0;
+	padding: 5px;
+	width: 100%;
+}
+
+.pokemon {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+	flex-wrap: wrap;
+	padding: 0 20px;
+	width: 100%;
+}
+
+.no-pokemon {
+	font-size: 1.2rem;
+}
+
+@media (max-width: 1100px) {
+	.charizard {
+		display: none;
+	}
+}
