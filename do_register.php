@@ -6,6 +6,7 @@
 
         for ($i = 0; $i < count($usuarios); $i++) {
             if ($usuarios[$i]['email'] == $_POST['email']) {
+                require_once "register.php";
                 echo "Email ya registrado";
                 exit;
             }
