@@ -41,6 +41,9 @@ if (isset($_POST['nombre'])) {
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <?php
+        require_once "header.php";
+    ?>
     <main>
         <section class="form-content">
             <form action="landing.php" method="post">

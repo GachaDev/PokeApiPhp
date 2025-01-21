@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <?php
+        require_once "header.php";
         require_once "login.php";
         $isLogged = true;
         
@@ -19,9 +21,9 @@
     ?>
     <form action="index.php" method="post">
         <label for="email">Email</label>
-        <input style="border: 1px solid <?= $isLogged ? 'none' : "red" ?>" type="email" name="email" id="email">
+        <input style="border: 1px solid <?= $isLogged ? 'none' : "red" ?>" type="email" name="email" id="email" value="<?= isset($_POST['email']) ? $_POST['email'] : "" ?>">
         <label for="password">Contraseña</label>
-        <input style="border: 1px solid <?= $isLogged ? 'none' : "red" ?>" type="password" name="password" id="password">
+        <input style="border: 1px solid <?= $isLogged ? 'none' : "red" ?>" type="password" name="password" id="password" value="<?= isset($_POST['password']) ? $_POST['password'] : "" ?>">
         <input type="submit" value="Login">
     </form>
     <?php
