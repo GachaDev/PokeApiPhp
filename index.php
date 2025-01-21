@@ -19,17 +19,19 @@
             }
         }
     ?>
-    <form action="index.php" method="post">
-        <label for="email">Email</label>
-        <input style="border: 1px solid <?= $isLogged ? 'none' : "red" ?>" type="email" name="email" id="email" value="<?= isset($_POST['email']) ? $_POST['email'] : "" ?>">
-        <label for="password">Contraseña</label>
-        <input style="border: 1px solid <?= $isLogged ? 'none' : "red" ?>" type="password" name="password" id="password" value="<?= isset($_POST['password']) ? $_POST['password'] : "" ?>">
-        <input type="submit" value="Login">
-    </form>
-    <?php
-        if (!$isLogged) {
-            echo "<span style='color: red'>Usuario o contraseña incorrectos</span>";
-        }
-    ?>
+    <div class="login">
+        <form action="index.php" method="post">
+            <label for="email">Email</label>
+            <input style="border: 1px solid <?= $isLogged ? 'none' : "red" ?>" type="email" name="email" id="email" value="<?= isset($_POST['email']) ? $_POST['email'] : "" ?>">
+            <label for="password">Contraseña</label>
+            <input style="border: 1px solid <?= $isLogged ? 'none' : "red" ?>" type="password" name="password" id="password" value="<?= isset($_POST['password']) ? $_POST['password'] : "" ?>">
+            <button type="submit">Login</button>
+        </form>
+        <?php
+            if (!$isLogged) {
+                echo "<span style='color: red'>Usuario o contraseña incorrectos</span>";
+            }
+        ?>
+    </div>
 </body>
 </html>

@@ -10,14 +10,16 @@
     <?php
         require_once "header.php";
     ?>
-    <form action="do_register.php" method="post">
-        <label for="nombre">Nombre</label>
-        <input type="text" name="nombre" id="nombre">
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email">
-        <label for="password">Contraseña</label>
-        <input type="password" name="password" id="password">
-        <input type="submit" value="Registrar">
-    </form>
+    <div class="register">
+        <form action="do_register.php" method="post">
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" id="nombre">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email">
+            <label for="password">Contraseña</label>
+            <input type="password" name="password" id="password">
+            <button type="submit">Registrar</button>
+        </form>
+    </div>
 </body>
 </html>
