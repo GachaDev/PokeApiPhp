@@ -62,6 +62,7 @@ if (isset($_POST['nombre'])) {
                     </div>
                     <div class="content">
                         <h3><?= ucfirst($datos_pokemon['name']); ?></h3>
+                        <span>Tipo = <?= $datos_pokemon['types'][0]['type']['name'] ?></span>
                         <span>HP = <?= $datos_pokemon['stats'][0]['base_stat']; ?></span>
                         <span>Ataque = <?= $datos_pokemon['stats'][1]['base_stat']; ?></span>
                         <span>Defensa = <?= $datos_pokemon['stats'][2]['base_stat']; ?></span>
