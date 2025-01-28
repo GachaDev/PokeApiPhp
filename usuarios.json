@@ -1,32 +1,47 @@
 [
-    {
-        "nombre": "John",
-        "email": "john@gmail.com",
-        "password": "123456"
-    },
-    {
-        "nombre": "Mary",
-        "email": "mary@gmail.com",
-        "password": "1234567"
-    },
-    {
-        "nombre": "Paco",
-        "email": "paco@gmail.com",
-        "password": "12345"
-    },
-    {
-        "nombre": "Pepe",
-        "email": "pepe@pepe.com",
-        "password": "123456"
-    },
-    {
-        "nombre": "aaa",
-        "email": "aaa@gmail.com",
-        "password": "5555"
-    },
-    {
-        "nombre": "pikachu",
-        "email": "admin@admin.com",
-        "password": "12"
-    }
+	{
+		"nombre": "John",
+		"email": "john@gmail.com",
+		"password": "123456"
+	},
+	{
+		"nombre": "Mary",
+		"email": "mary@gmail.com",
+		"password": "1234567"
+	},
+	{
+		"nombre": "Paco",
+		"email": "paco@gmail.com",
+		"password": "12345"
+	},
+	{
+		"nombre": "Pepe",
+		"email": "pepe@pepe.com",
+		"password": "123456"
+	},
+	{
+		"nombre": "aaa",
+		"email": "aaa@gmail.com",
+		"password": "5555"
+	},
+	{
+		"nombre": "pikachu",
+		"email": "admin@admin.com",
+		"password": "12"
+	},
+	{
+		"nombre": "laca",
+		"email": "laca@gmail.com",
+		"password": "1234565"
+	},
+	{
+		"nombre": "",
+		"email": "jchagal779@g.educaand.es",
+		"password": "12"
+	},
+	{
+		"nombre": "Paca",
+		"email": "paca@paca.com",
+		"password": "123456"
+	}
 ]

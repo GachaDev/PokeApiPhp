@@ -3,24 +3,48 @@
 
     if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['nombre'])) {
         $usuarios = loadEventsFromJson();
+        $error = false;
+        $nombre = $_POST['nombre'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $errors = [];
 
-        for ($i = 0; $i < count($usuarios); $i++) {
-            if ($usuarios[$i]['email'] == $_POST['email']) {
-                require_once "register.php";
-                echo "Email ya registrado";
-                exit;
+        // Validar campos vacíos
+        if (empty($nombre)) {
+            $errors['nombre'] = "El nombre no puede estar vacío";
+        }
+
+        if (empty($email)) {
+            $errors['email'] = "El email no puede estar vacío";
+        } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $errors['email'] = "El email no es válido";
+        }
+
+        if (empty($password)) {
+            $errors['password'] = "La contraseña no puede estar vacía";
+        }
+
+        // Verificar si el email ya está registrado
+        foreach ($usuarios as $usuario) {
+            if ($usuario['email'] === $email && $email) {
+                $errors['email'] = "Este email ya ha sido registrado";
+                break;
             }
         }
 
-        $usuarios[] = [
-            'nombre' => $_POST['nombre'],
-            'email' => $_POST['email'],
-            'password' => $_POST['password']
-        ];
+        if (empty($errors)) {
+            $usuarios[] = [
+                'nombre' => $_POST['nombre'],
+                'email' => $_POST['email'],
+                'password' => $_POST['password']
+            ];
 
-        saveEventsToJson($usuarios);
+            saveEventsToJson($usuarios);
 
-        header("Location: index.php");
+            header("Location: index.php");
+        } else {
+            require_once "register.php";
+        }
     } else {
         header("Location: register.php");
     }

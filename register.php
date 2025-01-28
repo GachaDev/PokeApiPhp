@@ -13,12 +13,19 @@
     <div class="register">
         <form action="do_register.php" method="post">
             <label for="nombre">Nombre</label>
-            <input type="text" name="nombre" id="nombre">
+            <input  style="border-color: <?= isset($errors['nombre']) ? 'red' : '#ccc'; ?>"  type="text" name="nombre" id="nombre" value="<?= $nombre ?? '' ?>">
             <label for="email">Email</label>
-            <input type="email" name="email" id="email">
+            <input style="border-color: <?= isset($errors['email']) ? 'red' : '#ccc' ?>" type="email" name="email" id="email" value="<?= $email ?? '' ?>">
             <label for="password">Contraseña</label>
-            <input type="password" name="password" id="password">
+            <input style="border-color: <?= isset($errors['password']) ? 'red' : '#ccc' ?>" type="password" name="password" id="password" value="<?= $password ?? '' ?>">
             <button type="submit">Registrar</button>
+            <?php if (isset($errors)): ?>
+                <p class="error">
+                    <?php foreach ($errors as $error): ?>
+                        <?= $error ?><br>
+                    <?php endforeach; ?>
+                </p>
+            <?php endif; ?>
         </form>
     </div>
 </body>
