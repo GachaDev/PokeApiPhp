@@ -32,6 +32,7 @@
             }
         }
 
+        // Si no hay errores, guardo el usuario en el json y redirijo a la página de iniciar sesión
         if (empty($errors)) {
             $usuarios[] = [
                 'nombre' => $_POST['nombre'],

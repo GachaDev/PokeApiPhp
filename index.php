@@ -22,6 +22,7 @@
         $passwordError = false;
 
         if (isset($_POST['email']) && isset($_POST['password'])) {
+            // Validacion de los campos
             if (empty($_POST['email'])) {
                 $emailError = "El email no puede estar vacío";
             } elseif (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
@@ -34,6 +35,7 @@
 
             if ($_POST['email'] && $_POST['password'] && filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
                 $isLogged = login($_POST['email'], $_POST['password']);
+                // Si el usuario es válido, guardo su email en la sesión y redirijo a la página de inicio
                 if ($isLogged) {
                     $_SESSION['user'] = $_POST['email']; // Guardar el usuario en la sesión
                     header("Location: landing.php");

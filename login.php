@@ -7,7 +7,7 @@
         if (isset($_POST['email']) && isset($_POST['password'])) {
             $logged = false;
 
-            foreach ($usuarios as $usuario) {
+            foreach ($usuarios as $usuario) { //Recorro cada usuario y compruebo si el email y la contraseña coinciden
                 if ($usuario['email'] == $emailIntroduced && $usuario['password'] == $passwordIntroduced) {
                     $logged = true;
                     $nombre = $usuario['nombre'];

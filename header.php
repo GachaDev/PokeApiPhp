@@ -12,6 +12,7 @@
     <header>
         <img src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png" alt="Logo">
         <nav>
+            <!-- Si el usuario está registrado, muestro solo Inicio y Cerrar sesión -->
             <?php if (isset($_SESSION['user'])): ?>
                 <a href="landing.php">Inicio</a>
                 <a href="logout.php">Cerrar sesión</a>

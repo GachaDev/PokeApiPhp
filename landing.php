@@ -1,12 +1,13 @@
 <?php
 if (isset($_POST['nombre'])) {
     $nombre = $_POST['nombre'];
+    // Obtengo los datos del pokemon a traves de su nombre o id
     $ch = curl_init("https://pokeapi.co/api/v2/pokemon/" . $nombre . "/");
 
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     $response = curl_exec($ch);
     $datos_pokemon = json_decode($response, true);
-    $types = [
+    $types = [ //Declaro los tipos de pokemon y les asigno a cada uno un color
         "normal" => "gray",
         "fighting" => "red",
         "flying" => "skyblue",
