@@ -42,7 +42,13 @@ if (isset($_POST['nombre'])) {
 </head>
 <body>
     <?php
+        // Verificar si el usuario está autenticado
         require_once "header.php";
+        if (!isset($_SESSION['user'])) {
+            header("Location: index.php"); // Redirigir al login si no hay sesión activa
+            exit();
+        }
+
     ?>
     <main>
         <section class="form-content">

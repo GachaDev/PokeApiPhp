@@ -9,6 +9,11 @@
 <body>
     <?php
         require_once "header.php";
+
+        if (isset($_SESSION['user'])) {
+            header("Location: landing.php"); // Redirigir al landing si hay sesión activa
+            exit();
+        }
     ?>
     <div class="register">
         <form action="do_register.php" method="post">

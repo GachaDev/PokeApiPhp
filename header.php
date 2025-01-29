@@ -1,3 +1,6 @@
+<?php
+    session_start(); // Iniciar sesión
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,8 +12,13 @@
     <header>
         <img src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png" alt="Logo">
         <nav>
-            <a href="register.php">Registro</a>
-            <a href="index.php">Iniciar sesión</a>
+            <?php if (isset($_SESSION['user'])): ?>
+                <a href="landing.php">Inicio</a>
+                <a href="logout.php">Cerrar sesión</a>
+            <?php else: ?>
+                <a href="register.php">Registro</a>
+                <a href="index.php">Iniciar sesión</a>
+            <?php endif; ?>
         </nav>
     </header>
 </body>

@@ -7,9 +7,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<?php
+    <?php
         require_once "header.php";
         require_once "login.php";
+
+        if (isset($_SESSION['user'])) {
+            header("Location: landing.php"); // Redirigir al landing si hay sesión activa
+            exit();
+        }
+
         $isLogged = true;
 
         $emailError = false;
@@ -29,7 +35,9 @@
             if ($_POST['email'] && $_POST['password'] && filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
                 $isLogged = login($_POST['email'], $_POST['password']);
                 if ($isLogged) {
+                    $_SESSION['user'] = $_POST['email']; // Guardar el usuario en la sesión
                     header("Location: landing.php");
+                    exit();
                 }
             }
         }
